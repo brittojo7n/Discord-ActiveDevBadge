@@ -1,44 +1,58 @@
+# Discord Active Developer Badge Bot
 
-# Active Developer Badge
-Discord just launched the new "Active Developer" badge and they're encouraging new developers to join the community and get it.
-If you're still learning and want the badge, follow the instructions below!
+This repository contains a minimal Discord bot used to trigger the requirements for the Discord **Active Developer Badge**.
 
+The bot only registers and responds to a single slash command: `/ping`.
 
+## Setup and Instructions
 
+Follow these steps to deploy the bot and become eligible for the badge.
 
---------------------------------------
+### 1. Discord Application Setup
 
-![image](https://i.imgur.com/z6jzw4C.png)
+1.  Go to the [Discord Developer Portal](https://discord.com/developers/applications) and create a **New Application**.
+2.  In the application settings, go to the **Bot** tab and click **Add Bot**.
+3.  Click **Reset Token** and **copy the bot token**. You will need this to run the bot.
+4.  Go to the **General Information** tab and **copy the Application ID**. You will need this for the invite link.
 
---------------------------------------
+### 2. Local Environment Setup
 
+1.  Ensure you have **Node.js** installed on your system.
+2.  Save the provided `index.js` and `package.json` files.
+3.  Open your terminal or command prompt in the project directory.
+4.  Install the necessary dependencies:
 
+    ```bash
+    npm install
+    ```
 
-# Instructions
+5.  Run the bot:
 
-- Go to https://discord.com/developers/applications, and create a new application on the account you want the badge on.
-- Go to the bot tab and generate a bot account for the application.
-- Click the "Reset Token" button to generate a token (if you have 2fa enabled, you'll need your code).
-- Copy the token to your clipboard.
-- Click this badge to clone this repo to a new repl in Replit -> [![Run on Repl.it](https://replit.com/badge/github/hackermondev/discord-active-developer-badge)](https://replit.com/new/github/hackermondev/discord-active-developer-badge)
-  - You will be redirected to Replit, you might have to create an account (you can Register with Google).
-    - Replit is a website, and does not run off your computer! 
-- Wait for the repo has finished cloning and the repl to fully connect.
-- Click the green "Run" button at the top.
-- Go to the console (big black square on the right) and paste in the token you copied earlier (**Note**: ``CTRL + V`` won't work, you'll need to do ``CTRL + Shift + V`` or right-click and click paste).
-- Press the 'Enter' key.
-- Wait for it to print 'DONE | Application/Bot is up and running. DO NOT CLOSE THIS TAB UNLESS YOU ARE FINISHED USING THE BOT, IT WILL PUT THE BOT OFFLINE.' in the console, **DON'T STOP THE PROGRAM OR CLOSE THE TAB YET OR THE BOT WILL CONSIDERED BY DISCORD AS 'UNRESPONSIVE'**
-- Go back to the application page, go to the "General Information" tab, scroll down and copy application id.
-- Create a new discord server (you can delete it at the end).
-- Enable community on the server (you only need to do this if you don't own any other discord server with community enabled)
-- Return back to https://discord.com/developers/applications.
-- Copy the application id.
-- Use this invite link to add the application to the server: (replace ``{applicationid}`` with what you copied) ``https://discord.com/oauth2/authorize?client_id={applicationid}&scope=bot%20applications.commands&permissions=105227086912``
-- In the server, go to a channel and use the ``/ping`` command on the bot.
-- Go to the <https://discord.com/developers/active-developer> page and register everything (**if it says you're not eligible, it's because you're not registered in their system yet. you might have to wait up to 24 hours**).
-- Congrats on that shiny new badge.
+    ```bash
+    node index.js
+    ```
 
+6.  When prompted in the console, **paste your bot token** and press Enter.
+7.  Wait for the console to log the message: `DONE | Application/Bot is up and running...`. **Keep this running.**
 
-**NOTE:** Make sure you have the “Use data to improve Discord” setting enabled under User Settings > Privacy & Safety otherwise you won't be able to be marked as eligible.
+### 3. Invite the Bot and Claim the Badge
 
-**NOTE 2:** You do not need to keep the Replit tab open 24/7. Only go to the Replit url whenever you want to run your bot.
+1.  **Create a new Discord server** or use an existing one where you have admin privileges.
+2.  Go to **Server Settings -> Enable Community** and follow the steps to enable it for the server.
+3.  Use the following URL to invite your bot (replace `{applicationid}` with the Application ID you copied in Step 1):
+
+    ```
+    https://discord.com/oauth2/authorize?client_id={applicationid}&scope=bot%20applications.commands&permissions=105227086912
+    ```
+
+4.  In any channel on that server, use the command:
+
+    ```
+    /ping
+    ```
+
+5.  Visit the **Active Developer Badge** page at [https://discord.com/developers/active-developer](https://discord.com/developers/active-developer) and register your application.
+    * *Note: If you are not eligible right away, you may need to wait up to 24 hours for Discord's system to register the command usage.*
+
+**Important Settings:**
+* Make sure you have the **“Use data to improve Discord”** setting enabled under User Settings > Privacy & Safety, as this is required for eligibility.
